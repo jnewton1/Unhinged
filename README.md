@@ -4,3 +4,4 @@
 * Matthew Wilson
 * Sean Brightman
 * Mervyn Walton
+* Jahmal Newton
