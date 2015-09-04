@@ -1,20 +1,54 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>UnHinged</title>
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="scripts/jquery.js" type="text/javascript"></script>
+<link rel=stylesheet href="scripts/css.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Unhinged</title>
 </head>
+
 <body>
 
-<h1>Unhinged</h1>
-<div>
+<!--Game scenarios-->
+<center><div id="wingame">
+<p>You escaped with your life! Congratulations!</p>
+<p class="link"><a href="index.html">Play again</a>
+</div></center>
 
-<p>Rough draft of our initial site </p> 
+<center><div id="killself" style="display:none;">
+<p>Helen was never heard from again...</p>
+<p class="link"><a href="index.html">Play again</a>
+</div></center>
 
-<button class="btn btn-default" type="button">Stur</button>
+<!-- Displays compass on screen-->
+<div id="container">
+<div id="compass"><img src="images/compass.png" /></div>
+
+<div id="console">
+
+
+<!--Main Story-->
+<p id="message_begin">Welcome to Unhinged. At any time you may press the button on the bottom left for the menu.</p>
+
+<p id="message_help">Help: (replace italicized words)<br />
+take <i>object</i>: takes the specified object and puts it in your inventory<br />
+eat <i>food</i>: eats indicated food item<br />
+kill <i>creature</i> with <i>object</i>: kills indicated creature with specified object<br />
+inventory: lists everything you are currently carrying<br />
+unlock <i>door</i> with <i>object</i>: unlocks door with the object you specify<br />
+go <i>direction</i>: attempts to travel in direction (north, east, south, west)<br />
+search <i>object</i>: searches the indicated object for items</p>
+
+<!--
+ALLOWS CONTENT TO BE INSERTED BEFORE THIS
+-->
+<div id="placeholder"></div>
 
 </div>
+
+<p class="copyright"></p>
+<script type="text/javascript" src="scripts/game.js"></script>
+
 </body>
+
 </html>
