@@ -11,11 +11,11 @@
 
 <!--Game scenarios-->
 <center><div id="wingame">
-<p>You escaped with your life! Congratulations!</p>
+<p>Helen escaped with her life! Congratulations!</p>
 <p class="link"><a href="index.html">Play again</a>
 </div></center>
 
-<center><div id="killself" style="display:none;">
+<center><div id="losegame" style="display:none;">
 <p>Helen was never heard from again...</p>
 <p class="link"><a href="index.html">Play again</a>
 </div></center>
@@ -44,7 +44,18 @@ search <i>object</i>: searches the indicated object for items</p>
 
 </div>
 
+<!--Creates a Input Bar-->
+<!--We ned to check with JJ to see if this is viable for the game vs on screen button-->
+<form onsubmit="return false;">
+<center><input type="text" id="command_line" size="50" autofocus="autofocus" /></center>
+</form>
+</div>
+
 <p class="copyright"></p>
+
+<p class="copyright"></p>
+
+<!-- jgame.js will contain the classes needed for the scripts-->
 <script type="text/javascript" src="scripts/game.js"></script>
 
 </body>
