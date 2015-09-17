@@ -45,7 +45,7 @@ body {
 	margin-left: -400px;
 }
 
-/**/
+/*Positions the terminal and applies a background for form*/
 #console {
 	background-color:black; 
 	height: 400px; 
@@ -53,4 +53,77 @@ body {
 	margin: 0 auto;
 	overflow: auto;
 	color: white;
+}
+
+#console p {
+	color: white;
+	display: none;
+	font-size: 17px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+/*Victory Conditionals*/
+#wingame {
+	display: none;
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+}
+
+#wingame p {
+	font-size: 30px;
+	padding-top: 175px;
+	color: white;
+}
+
+#wingame p.link {
+	font-size: 15px;
+	padding-top: 0px;
+}
+
+#wingame a {
+	color: white;
+}
+
+#wingame a:hover {
+	color: red;
+}
+
+/*Lose game conditionals*/
+#losegame {
+	display: none;
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+}
+
+#losegame p {
+	font-size: 30px;
+	padding-top: 175px;
+	color: white;
+}
+
+#losegame p.link {
+	font-size: 15px;
+	padding-top: 0px;
+}
+
+#losegame a {
+	color: white;
+}
+
+#losegame a:hover {
+	color: red;
+}
+
+#command_line {
+	display: none;
 }
