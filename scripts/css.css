@@ -1,0 +1,16 @@
+/* 
+CSS Document 
+=====
+Initial CSS This will just be a test phase.
+=====
+Once presented to team, changes can be made as necessary based off of Lead Design JJ Lindsay
+*/
+
+@font-face {
+        font-family: "Console";
+        src: url("fonts/CPmono.ttf") format("truetype");
+}
+
+body {
+	background-color: black;	
+}
