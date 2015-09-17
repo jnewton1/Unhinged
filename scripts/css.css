@@ -34,3 +34,23 @@ body {
 	margin-left: -650px;
 	display: none;
 }
+
+/*specifies container*/
+#container {
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -400px;
+}
+
+/**/
+#console {
+	background-color:black; 
+	height: 400px; 
+	width: 800px; 
+	margin: 0 auto;
+	overflow: auto;
+	color: white;
+}
