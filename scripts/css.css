@@ -6,11 +6,31 @@ Initial CSS This will just be a test phase.
 Once presented to team, changes can be made as necessary based off of Lead Design JJ Lindsay
 */
 
+/*Specifies the Console font and provides url where it can be found*/
 @font-face {
         font-family: "Console";
         src: url("fonts/CPmono.ttf") format("truetype");
 }
 
+/*Sets background color*/
 body {
 	background-color: black;	
+}
+
+/*Sets copyright color to gray and assigns font size*/
+.copyright {
+	color: #333333;
+	font-size: 12px;
+}
+
+/*Positions Compass on left section screen*/
+#compass {
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	top: 50%;
+	left: 50%;
+	margin-top: -125px;
+	margin-left: -650px;
+	display: none;
 }
