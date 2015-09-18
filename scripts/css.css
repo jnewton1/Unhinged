@@ -127,3 +127,16 @@ body {
 #command_line {
 	display: none;
 }
+
+/*Applies color scheme to form fields */
+input {
+	background-color: black;
+	color: white;
+	border: 1px solid #333;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+}
+
+input:focus {
+	outline: none;
+}
