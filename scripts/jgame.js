@@ -98,3 +98,21 @@ $(document).ready(function() {
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
+
+			//lightarmor
+			else if (input == "take lightarmor" || input == "take lightarmor") {
+				if (currentroom == "level" && lightarmor == false) {
+					lightarmor = true;
+					$('<p>You picked up a lightarmor.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
+		}
+
+		//Implement search
+		else if (input.indexOf("search") > -1) {
+			if (input == "search") {
+				$('<p>Search what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
