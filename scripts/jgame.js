@@ -15,11 +15,11 @@ exitunlocked = false;
 beentoexit = false;
 
 //List possible inventory items
-twigs = false;
+stick = false;
 apple = false;
 shield = false;
 stone = false;
-weathereddagger = false;
+dagger = false;
 shirt = false;
 tunic = false;
 lightarmor = false;
@@ -27,3 +27,16 @@ slingshot = false;
 key = false;
 powder = false;
 
+currentroom = "level";
+searchtable = false;
+crate = false;
+soldierfaints = false;
+
+//Begin 
+$(document).ready(function() {
+	$("#compass").fadeIn(3000);
+	$("#message_begin").fadeIn(3000);
+	$("#area_main").fadeIn(3000);
+	$("#command_line").fadeIn(3000);
+	$("form").submit(function() {
+		var input = $("#command_line").val();
