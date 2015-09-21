@@ -16,12 +16,11 @@ beentoexit = false;
 
 //List possible inventory items
 stick = false;
-apple = false;
 shield = false;
-stone = false;
-dagger = false;
+pebbles = false;
 shirt = false;
 tunic = false;
+apple = false;
 lightarmor = false;
 slingshot = false;
 key = false;
@@ -59,7 +58,7 @@ $(document).ready(function() {
 			else if (input == "take stick" || input == "take stick") {
 				if (currentroom == "level" && stick == false) {
 					stick = true;
-					$('<p>You picked up a stick.</p>').insertBefore("#placeholder").fadeIn(1000);
+					$('<p>You picked up a stick. Maybe this could be of some use..</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
@@ -68,7 +67,34 @@ $(document).ready(function() {
 			else if (input == "take shield" || input == "take shield") {
 				if (currentroom == "level" && shield == false) {
 					shield = true;
-					$('<p>You picked up a shield. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
+					$('<p>You picked up a shield. You can now venture off into the forest..</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Pebbles
+			else if (input == "take pebbles" || input == "take pebbles") {
+				if (currentroom == "level" && pebbles == false) {
+					pebbles = true;
+					$('<p>You picked up a pebbles. Could I use these..?</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Shirt
+			else if (input == "take shirt" || input == "take shirt") {
+				if (currentroom == "level" && shirt == false) {
+					shirt = true;
+					$('<p>You picked up a shirt.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Slingshot
+			else if (input == "take slingshot" || input == "take slingshot") {
+				if (currentroom == "level" && slingshot == false) {
+					slingshot = true;
+					$('<p>You picked up a slingshot. This will allow me to stay out of sight..</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
