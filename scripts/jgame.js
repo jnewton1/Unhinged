@@ -40,3 +40,35 @@ $(document).ready(function() {
 	$("#command_line").fadeIn(3000);
 	$("form").submit(function() {
 		var input = $("#command_line").val();
+
+		//Help 
+		if (input.indexOf("help") > -1) {
+			if (input == "help") {
+				$("#message_help").clone().insertBefore("#placeholder").fadeIn(1000);
+			}
+		}
+
+		//Take Items
+		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1) {
+			
+			if (input == "take") {
+				$('<p>Take what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Stick
+			else if (input == "take stick" || input == "take stick") {
+				if (currentroom == "level" && stick == false) {
+					stick = true;
+					$('<p>You picked up a stick.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Shield
+			else if (input == "take shield" || input == "take shield") {
+				if (currentroom == "level" && shield == false) {
+					shield = true;
+					$('<p>You picked up a shield. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
