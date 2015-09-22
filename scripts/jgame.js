@@ -8,8 +8,8 @@
 gonetoforest = false;
 gonetocastle = false;
 gonetovillage = false;
-beenhungry = false;
-earnabonus = false;
+gonetodesert = false;
+gonetobonus = false;
 doorunlocked = false;
 exitunlocked = false;
 beentoexit = false;
@@ -24,7 +24,7 @@ apple = false;
 lightarmor = false;
 slingshot = false;
 key = false;
-powder = false;
+cookie = false;
 
 currentroom = "level";
 searchtable = false;
@@ -35,7 +35,7 @@ soldierfaints = false;
 $(document).ready(function() {
 	$("#compass").fadeIn(3000);
 	$("#message_begin").fadeIn(3000);
-	$("#area_main").fadeIn(3000);
+	$("#area_start").fadeIn(3000);
 	$("#command_line").fadeIn(3000);
 	$("form").submit(function() {
 		var input = $("#command_line").val();
@@ -99,7 +99,7 @@ $(document).ready(function() {
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 
-			//lightarmor
+			//Lightarmor
 			else if (input == "take lightarmor" || input == "take lightarmor") {
 				if (currentroom == "level" && lightarmor == false) {
 					lightarmor = true;
@@ -115,4 +115,59 @@ $(document).ready(function() {
 		else if (input.indexOf("search") > -1) {
 			if (input == "search") {
 				$('<p>Search what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Table
+			else if (input == "search table") {
+				if (currentroom == "level" && apple == false && key == false) {
+					apple = true;
+					key = true;
+					searchtable = true;
+					$('<p>You found an apple on the table and picked it up. You also take a key from the droor and place it in your pack.</p>').insertBefore("#placeholder").fadeIn(1000);
+					if (apple == true && key == true) {
+						$('<p>I am getting pretty hungry...and I wonder what door this key is for..</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+						
+				}
+				else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Soldier
+			else if (input == "search soldier") {
+				if (currentroom == "castle" && soldierfaints == true) {
+					key = true;
+					$('<p>You found a key hidden in the soldier\'s armor.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			//Crate
+			else if (input == "search crate") {
+				if (currentroom == "bonus") {
+					cookie = true;
+					$('<p>You found a jar of cookies. What use could that possibly have?</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+
+			else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
+		
+		}
+			//*****End Search Class*******
+
+		//Eat food
+		else if (input.indexOf("eat") > -1) {
+			
+			if (input == "eat") {
+				$('<p>Eat what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Cookie
+			else if (input == "eat cookie" || input == "eat strange cookie") {
+				if (cookie == true) {
+					$("#container").fadeOut(3000, function() {
+						$("#gluttonous").fadeIn(3000);
+					});
+				}
+				else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
