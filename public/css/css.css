@@ -17,6 +17,12 @@ body {
 	background-color: black;	
 }
 
+.description{
+	
+	width: 500px;
+	height: 500px;
+	background-color: white;
+}
 /*Sets copyright color to gray and assigns font size*/
 .copyright {
 	color: #333333;
