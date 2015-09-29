@@ -17,6 +17,7 @@ beentoexit = false;
 //List possible inventory items
 stick = false;
 shield = false;
+liquor = false;
 torch = false;
 pebbles = false;
 shirt = false;
