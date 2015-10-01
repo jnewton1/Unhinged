@@ -308,7 +308,6 @@ else if (input.indexOf("inventory") > -1) {
 				else {
 					ss = "";
 				}
-				//
 								
 				//Pebbles
 				if (pebbles == true) {
@@ -317,7 +316,6 @@ else if (input.indexOf("inventory") > -1) {
 				else {
 					pbl = "";
 				}
-				//
 				
 				//Tunic
 				if (tunic == true) {
