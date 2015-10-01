@@ -5,11 +5,11 @@
 
 
 //Assigns varibles for Unhinged
-gonetoforest = false;
 gonetocastle = false;
-gonetovillage = false;
 gonetodesert = false;
-gonetobonus = false;
+gonetoartic = false;
+gonetomist = false;
+gonetoforest = false;
 doorunlocked = false;
 exitunlocked = false;
 beentoexit = false;
@@ -17,16 +17,15 @@ beentoexit = false;
 //List possible inventory items
 stick = false;
 shield = false;
-liquor = false;
+apples = false;
+note = false;
 torch = false;
-pebbles = false;
-shirt = false;
-tunic = false;
-apple = false;
-lightarmor = false;
 slingshot = false;
+pebbles = false;
+tunic = false;
+lightarmor = false;
 key = false;
-cookie = false;
+cookies = false;
 
 currentroom = "level";
 searchtable = false;
@@ -69,34 +68,61 @@ $(document).ready(function() {
 			else if (input == "take shield" || input == "take shield") {
 				if (currentroom == "level" && shield == false) {
 					shield = true;
-					$('<p>You picked up a shield. You can now venture off into the forest..</p>').insertBefore("#placeholder").fadeIn(1000);
+					$('<p>You picked up a shield. You are now more confident to venture into the unknown..</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Apples
+			else if (input == "take apples" || input == "take apples") {
+				if (currentroom == "level" && apples == false) {
+					apples = true;
+					$('<p>You picked up some apples. It isnt much, but it may sustain you..</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Torch
+			else if (input == "take torch") {
+				if (currentroom == "castle" && torch == false) {
+					torch = true;
+					$('<p>You picked up a torch. You can now venture off into the dark hallway.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Note
+			else if (input == "take note" || input == "read note") {
+				if (currentroom == "castle" && note == false) {
+					note = true;
+					$('<p>You picked up a note. It reads: <br />I will rule this kingdom and amass the finest alcohol in all the lands. Don\'t worry... Once I conquer all the villages it will be impossible for the girl to escape with her life.<br /><br />P.S. I have dispatched soldiers across the land. Be weary they will attack anyone not bearing my symbol.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Slingshot
+			else if (input == "take slingshot" || input == "take slingshot") {
+				if (currentroom == "village" && slingshot == false) {
+					slingshot = true;
+					$('<p>You picked up a slingshot. This could be useful..</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 
 			//Pebbles
 			else if (input == "take pebbles" || input == "take pebbles") {
-				if (currentroom == "level" && pebbles == false) {
+				if (currentroom == "village" && pebbles == false) {
 					pebbles = true;
 					$('<p>You picked up a pebbles. Could I use these..?</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 
-			//Shirt
-			else if (input == "take shirt" || input == "take shirt") {
-				if (currentroom == "level" && shirt == false) {
-					shirt = true;
-					$('<p>You picked up a shirt.</p>').insertBefore("#placeholder").fadeIn(1000);
-				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
-			}
-
-			//Slingshot
-			else if (input == "take slingshot" || input == "take slingshot") {
-				if (currentroom == "level" && slingshot == false) {
-					slingshot = true;
-					$('<p>You picked up a slingshot. This will allow me to stay out of sight..</p>').insertBefore("#placeholder").fadeIn(1000);
+			//Tunic
+			else if (input == "take tunic" || input == "take tunic") {
+				if (currentroom == "desert" && tunic == false) {
+					tunic = true;
+					$('<p>You picked up a tunic. This may help me blend in here.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
