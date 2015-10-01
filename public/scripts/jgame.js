@@ -259,3 +259,105 @@ $(document).ready(function() {
 			else $('<p>You can\'t do that!</p>').insertBefore("#placeholder").fadeIn(1000);
 		}
 				//*****Implement Inventory*******
+else if (input.indexOf("inventory") > -1) {
+			if (input == "inventory") {
+				//Stick
+				if (stick == true) {
+					stck = "Stick<br />";
+				}
+				else {
+					stck = "";
+				}
+				
+				//Shield
+				if (shield == true) {
+					shld = "Shield<br />";
+				}
+				else {
+					shld = "";
+				}
+				
+				//Apples
+				if (apples == true) {
+					appl = "Apples<br />";
+				}
+				else {
+					appl = "";
+				}
+				
+				//Note
+				if (note == true) {
+					nt = "Note from Captors<br />";
+				}
+				else {
+					nt = "";
+				}
+				
+				//Torch
+				if (torch == true) {
+					tch = "Torch<br />";
+				}
+				else {
+					tch = "";
+				}
+				
+				//Slingshot
+				if (slingshot == true) {
+					ss = "Slingshot<br />";
+				}
+				else {
+					ss = "";
+				}
+				//
+								
+				//Pebbles
+				if (pebbles == true) {
+					pbl = "Pebbles<br />";
+				}
+				else {
+					pbl = "";
+				}
+				//
+				
+				//Tunic
+				if (tunic == true) {
+					tnc = "Tunic<br />";
+				}
+				else {
+					tnc = "";
+				}
+			
+				//Furhide
+				if (furhide == true) {
+					fh = "Furhide<br />";
+				}
+				else {
+					fh = "";
+				}
+				
+				//Key
+				if (key == true) {
+					key = "Key<br />";
+				}
+				else {
+					key = "";
+				}
+				
+				//Cookies
+				if (cookies == true) {
+					cks = "Cookies<br />";
+				}
+				else {
+					cks = "";
+				}
+				
+				
+				if (stick == "" && shield == "" && apples == "") {
+					$('<p>Inventory:<br /><i>There is nothing in your inventory</i></p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+				else {
+					 $('<p>Inventory:<br />' + stck + shld + appl + nt + tch + ss + pbl + tnc + fh + key + cks + '</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+			}
+			else $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
+		}
