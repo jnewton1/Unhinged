@@ -139,7 +139,8 @@ $(document).ready(function() {
 			else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 		}
 
-		//Implement search
+			//*****Implement Search*******
+
 		else if (input.indexOf("search") > -1) {
 			if (input == "search") {
 				$('<p>Search what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -162,7 +163,7 @@ $(document).ready(function() {
 
 			//Soldier
 			else if (input == "search soldier") {
-				if (currentroom == "village" && soldierfaints == true) {
+				if (currentroom == "desert" && soldierfaints == true) {
 					key = true;
 					$('<p>You found a key hidden in the soldier\'s armor.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
@@ -181,8 +182,10 @@ $(document).ready(function() {
 			else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
 		
 		}
-			//*****End Search Class*******
+			//*****End Search*******
 
+
+			//*****Implement eat*******
 		//Eat food
 		else if (input.indexOf("eat") > -1) {
 			
@@ -190,12 +193,69 @@ $(document).ready(function() {
 				$('<p>Eat what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			
-			//Cookie
-			else if (input == "eat cookie" || input == "eat strange cookie") {
-				if (cookie == true) {
+			//Cookies
+			else if (input == "eat cookies" || input == "eat cookies") {
+				if (cookies == true) {
 					$("#container").fadeOut(3000, function() {
 						$("#gluttonous").fadeIn(3000);
 					});
 				}
 				else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
+			
+		    //Apples
+			else if (input == "eat apples" || input == "eat apples") {
+				if (apples == true) {
+					$('<p>Wow..so good.</p>').insertBefore("#placeholder").fadeIn(1000);
+					apples = "ate";
+				}
+				else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			else $('<p>I don\'t understand "' + input + '</p>').insertBefore("#placeholder").fadeIn(1000);
+		}
+			//*****End Eat*******
+			
+				//*****Implement Battle*******
+		
+		else if (input.indexOf("battle") > -1) {
+			
+			if (input == "battle") {
+				$('<p>Battle what with what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			else if (input == "battle soldier" && currentroom == "desert") {
+				$('<p>Battle soldier with what?</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			
+			//Soldier
+			else if (input == "battle soldier with stick") {
+				if (currentroom == "desert" && stick == true) {
+					$('<p>You attack the soldier with a stick and caught him off guard!</p>').insertBefore("#placeholder").fadeIn(1000);
+					soldierfaints = true;
+				}
+				else {
+					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+			}
+					
+			else if (input == "battle soldier with shield") {
+				if (currentroom == "desert" && shield == true) {
+					$('<p>You fend off the soldier\'s attack and defeat it!</p>').insertBefore("#placeholder").fadeIn(1000);
+					soldierfaints = true;
+				}
+				else {
+					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+			}
+			
+			else if (input == "battle soldier with slingshot"  || input == "battle soldier with sling shot" || input == "battle soldier with pebbles") {
+				if (currentroom == "desert" && shield == true) {
+					$('<p>You pelt the soldier with a barrage of pebbles. He flees in fear.</p>').insertBefore("#placeholder").fadeIn(1000);
+					soldierfaints = true;
+				}
+				else {
+					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+			}
+			else $('<p>You can\'t do that!</p>').insertBefore("#placeholder").fadeIn(1000);
+		}
+				//*****Implement Inventory*******
