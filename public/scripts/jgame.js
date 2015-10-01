@@ -162,7 +162,7 @@ $(document).ready(function() {
 
 			//Soldier
 			else if (input == "search soldier") {
-				if (currentroom == "castle" && soldierfaints == true) {
+				if (currentroom == "village" && soldierfaints == true) {
 					key = true;
 					$('<p>You found a key hidden in the soldier\'s armor.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
