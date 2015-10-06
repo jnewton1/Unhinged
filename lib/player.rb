@@ -23,4 +23,7 @@ p = Player.new(100)
   
 
 p.bark  
+
 p.display  
+
+

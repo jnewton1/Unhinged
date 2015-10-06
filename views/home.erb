@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
-<link rel=stylesheet href="scripts/css.css" type="text/css" />
+<link rel=stylesheet href="/css/jn1.css" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Unhinged</title>
 </head>
-
 <body>
 
 <!--Game scenarios-->
@@ -20,11 +18,6 @@
 <p class="link"><a href="index.html">Play again</a>
 </div></center>
 
-<center><div id="gluttonous" style="display:none;">
-<p>You were too greedy and have been imprisoned by the village elders.</p>
-<p class="link"><a href="index.html">Play again</a>
-</div></center>
-
 <!-- Displays compass on screen-->
 <div id="container">
 <div id="compass"><img src="images/compass.png" /></div>
@@ -33,19 +26,26 @@
 
 
 <!--Main Story-->
-<p id="message_begin">Welcome to Unhinged. At any time you may press the button on the bottom left for the menu.</p>
+<p id="message_begin">Welcome to Unhinged. At any time you may press the button on the bottom left for the menu, or type "help" for a list of commands that you may use.</p>
 
 <p id="message_help">Help: (replace the italicized words to utilize the commands)<br />
 take <i>object</i>: takes the specified object and puts it in your inventory<br />
 eat <i>food</i>: eats indicated food item<br />
-battle <i>enemy</i> with <i>object</i>: kills indicated enemy with specified object<br />
+battle <i>enemy</i> with <i>object</i>: fights indicated enemy with specified object<br />
 inventory: lists everything you are currently carrying<br />
 unlock <i>door</i> with <i>object</i>: unlocks door with the object you specify<br />
 go <i>direction</i>: attempts to travel in direction (north, east, south, west)<br />
 search <i>object</i>: searches the indicated object for items</p>
 
 <!--Utilizing challenges based on mobile team-->
-<p id="area_start">You find yourself outside of a colossal castle. You have no idea how you got here. Directly ahead of you to the north is the entrance to the castle. You hear the sound of metal drop and out of the corner of your eye you see a cat scurry into the shadows. You notice a shield lying there.</p>
+<!--Story Begins-->
+<p id="area_start">You find yourself inside of a dark and chilly room. You have no idea how you got here. Directly to the north is a door. You consider searching around the room to see if theres anything useful. You notice a stick lying on the floor. Also around the room are some apples and a shield illuminating a faint glow.</p>
+
+<p id="area_castle">You have entered the castle. To the west and to the east are long dark hallways. To the south is the room from whence you came. The only source of light is a torch hanging on the wall. Beneath the torch lies a note. Perhaps it can tell you where you are.</p>
+
+<p id="area_village">You have entered a village that seems to be a place of great anguish. Strange and grotesque looking inhabitants roam the streets. The air reeks of alcohol.. You notice there's a slingshot and some pebbles lying in the grass. To the south appears to be a wasteland of sand. To the west you notice the castle that you came from.</p>
+
+<p id="area_desert">As you advance south, you begin to hear loud noises. When you enter the village, you see a soldier attacking an elderly man and woman!</p>
 
 <!--Allows content to be added before this-->
 <div id="placeholder"></div>
@@ -61,10 +61,9 @@ search <i>object</i>: searches the indicated object for items</p>
 
 <p class="copyright"></p>
 
-<p class="copyright"></p>
-
 <!-- jgame.js will contain the classes needed for the scripts-->
 <script type="text/javascript" src="scripts/jgame.js"></script>
+<script src="/scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
 
 </body>
 
