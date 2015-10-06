@@ -17,16 +17,13 @@ body {
 	background-color: black;	
 }
 
-/*Creates a white background within the div decription class
-================
+
 .description{
 	
 	width: 500px;
 	height: 500px;
 	background-color: white;
 }
-================
-*/
 
 /*Sets copyright color to gray and assigns font size*/
 .copyright {
