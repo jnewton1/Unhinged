@@ -4,6 +4,6 @@ require './lib/game.rb'
 set :public_folder, "public"
 
 get '/' do
-  game= Game.new
-  erb :index, :locals => { :game => game.main }
+  level= Game::castle
+  erb :index, :locals => { :desc => level.description }
 end
