@@ -1,9 +1,12 @@
 <div class="description">
     
-    
-  <%= desc %>
+  <p style=color:white;><%= @story%></p>
   <%= Time.now  %>
+  <form action="/console" method="POST">
+    <input type='text' name="command">
+    <input type="submit">
     
+  </form>
     
     
 </div>
