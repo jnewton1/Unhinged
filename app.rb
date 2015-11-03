@@ -18,3 +18,6 @@ post '/console' do
   end
 end
 
+post '/startfire' do
+  erb :startfire
+end

@@ -1,7 +1,10 @@
 <div class="description">
     
   <p style=color:white;><%= @story%></p>
-  <%= Time.now  %>
+  <img src="/images/uh.jpg" alt="Unhinged" style="width:150px;height:75px;">
+  <!--<h1>Unhinged</h1>-->
+  <p><%=@story%></p>
+  <p><%=@followup%></p>
   <form action="/console" method="POST">
     <input type='text' name="command">
     <input type="submit">
