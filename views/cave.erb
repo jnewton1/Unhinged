@@ -1,8 +1,16 @@
 <!-- enter form -->
 <body background="/images/cave.png">
+  
+  
+<% if @status != "continue" %>
 <p style="color:white;" class="Descr"> You are in a cave! Visibility is low</p>
 
   <form action="/startfire" method="POST">
     <button>Start Fire </button>
   </form>
+
+<% else %>
+
+<%end%>
+
 </body>

@@ -4,10 +4,13 @@
 <p style="color:white;" >Light flickers, brightens the cave</p>
 <p style="color:white;" >100 Gold coins are scattered on the floor of the cave, how many do you take?</p>
 
-<!-- 
-if params['command'] > 50
-    call bear attack method 
-  else 
-    store item
-  end
-end
+
+<form action="/processgold" method="POST">
+    <label>Gold Count</label>
+    <input type ="text" name="goldcount">
+    <input type ="submit">
+    
+</form>
+
+
+</body>
