@@ -30,7 +30,8 @@ post '/processgold' do
   else
     #store inventory
     @goldcount = params['goldcount'].to_i
-    erb :tree
+    @status = "continue"
+    erb :cave
     #return "#{params['goldcount'].to_i} added to gold inventory"
  # return params['goldcount']
   end
@@ -45,11 +46,32 @@ post '/movement' do
 end
 
 post '/throwfivegold' do
-  @goldcount = 5
+  #@goldcount = @goldcount- 5
+  #because of greed they face dragon again
+  @greed = "yes"
   erb :dragonattack
 end
 
 post '/throwtengold' do
-  @goldcount = 10
+  @greed = "no"
+  #@goldcount -= 10
+  @status = "continue"
   erb :cave
+end
+
+post '/throwfifteengold' do
+  #@goldcount -= 15
+  @greed = "yes"
+  erb :cave
+end
+
+post '/throwtwentygold' do
+  @greed = "no"
+  #@goldcount -= 20
+  erb :cave
+end
+
+post '/stokefire' do
+  @status = "continue"
+  @firelevel = "high"
 end

@@ -9,7 +9,48 @@
     <button>Start Fire </button>
   </form>
 
-<% else %>
+<% elsif @status == "continue" && @firelevel == "low" %>
+  <p style="color:white;" class="Descr"> Fire is dying! Stoke the fire</p>
+
+  <form action="/stokefire" method="POST">
+    <button>Stoke Fire </button>
+  </form>
+<%else%>
+  <p style="color:white;" class="Descr"> Light is bright!</p>
+  
+  <script>
+  $(document).ready(function(){
+    $("button").click(function(){
+    $("#div1").delay(1800).fadeIn();
+    $("#div2").delay(2800).fadeIn();
+    $("#div3").delay(3800).fadeIn();
+    $("#div4").delay(5400).fadeIn();
+    $("#div5").delay(6800).fadeIn();
+
+  });
+  });
+  </script>
+  <button>Continue Story</button>
+ 
+  <div id="div1" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> I just fought a dragon, I thought they never existed!</p>
+  </div><br>
+  
+  <div id="div2" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> Second Message</p>
+  </div><br>
+  
+  <div id="div3" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> Story continues</p>
+  </div><br>
+  
+  <div id="div4" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> Blah blah blah....</p>
+  </div><br>
+  
+  <div id="div5" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> Add more!!!</p>
+  </div><br>
 <!-- <p style="color:white;" class="Descr"> You are in a cave! Visibility is low</p>
 
   <form action="/startfire" method="POST">
