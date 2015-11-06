@@ -43,3 +43,13 @@ post '/movement' do
   else
   end
 end
+
+post '/throwfivegold' do
+  @goldcount = 5
+  erb :dragonattack
+end
+
+post '/throwtengold' do
+  @goldcount = 10
+  erb :cave
+end
