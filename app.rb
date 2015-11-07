@@ -7,6 +7,7 @@ set :public_folder, "public"
 get '/' do
   @goldcount = 0
   @inventory = Hash.new
+  @inventory = {"Jane Doe" => 10}
   @story="You are in a dark forest. It's cold and raining."
   #@followup = "To the north there is a cave (1) and to the east there is a tree (2), choose your destiny"
   @option1 = "To the north there is a cave"
@@ -85,7 +86,7 @@ post '/updateinventory' do
   if params['command'] != 'no'
     #@inventory.add("knife")
   #@inventory.add(params['command'])
-  return @inventory
+  return "Inventory #{@inventory}"
   else
     erb :tree
   end
