@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'set'
 require './lib/game.rb'
 
 set :public_folder, "public"
@@ -79,6 +80,24 @@ post '/stokefire' do
   @firelevel = "high"
 end
 
+#hack because I dont know how to pass two values
+post '/updateinventory' do
+  if params['command'] != 'no'
+    #@inventory.add("knife")
+  #@inventory.add(params['command'])
+  return @inventory
+  else
+    erb :tree
+  end
+=begin  
+  if @inventory.include?(params['command'])
+    @inventory["knife"] += 1
+  else
+    @inventory.add(params['command'])
+  end
+  #return @inventory
+=end
+end
 =begin
 def updateinventory (hashvalue, amount)
   if @inventory.include?(hashvalue)

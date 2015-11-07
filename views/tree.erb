@@ -32,9 +32,17 @@
   </div><br>
   
   <div id="div5" style="width:590px;height:10px;display:none;">
-    <p style="color:white;" class="Descr"> Knife added to inventory</p>
-     <form action="/" method="POST">
-      <input type='text' name="command">
+    <p style="color:white;" class="Descr"> Add knife to inventory</p>
+     <!--
+     <form action="/updateinventory" method="POST">
+      <input type="radio" name="command" value="knife">
+        <p style="color:white;">Yes</p><br>
+      <input type="radio" name="command" value="no">
+        <p style="color:white;">No</p><br>
       <input type="submit">
+    </form> -->
+    <form action="/updateinventory" method="POST">
+      <input type="hidden" name="command" value="knife">
+      render "
     </form>
   </div><br>
