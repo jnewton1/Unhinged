@@ -3,13 +3,22 @@
 
   <img src="/images/uh.png" alt="Unhinged" style="width:150px;height:75px;">
   <!--<h1>Unhinged</h1>-->
-  <p style="color:white;"><%=@story%></p>
+  <!--<p style="color:white;"><%=@story%></p>
   <p style="color:white;"><%=@followup%></p>
   <form action="/console" method="POST">
     <input type='text' name="command">
     <input type="submit">
     
   </form>
+  -->
+  <form action="/console" method="POST">
+    <input type = 'radio' name="command" value=1 checked> 
+      <p style="color:white;"><%=@option1%></p><br>
+    <input type = 'radio' name="command" value=2 checked> 
+      <p style="color:white;"><%=@option2%></p><br>
+    <input type="submit">
     
+  </form>
+       
     
 </div>
