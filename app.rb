@@ -5,9 +5,9 @@ require './lib/game.rb'
 set :public_folder, "public"
 
 get '/' do
-  @goldcount = 0
-  @inventory = Hash.new
-  @inventory = {"Jane Doe" => 10}
+  @@goldcount = 0
+  @@inventory = { }
+  #@@inventory = {"Jane Doe" => 10}
   @story="You are in a dark forest. It's cold and raining."
   #@followup = "To the north there is a cave (1) and to the east there is a tree (2), choose your destiny"
   @option1 = "To the north there is a cave"
@@ -31,10 +31,11 @@ end
 
 post '/processgold' do
   if params['goldcount'].to_i > 50
+    @@goldcount = params['goldcount'].to_i
     erb :dragonattack
   else
     #store inventory
-    @goldcount = params['goldcount'].to_i
+    @@goldcount = params['goldcount'].to_i
     @status = "continue"
     erb :cave
     #return "#{params['goldcount'].to_i} added to gold inventory"
@@ -51,30 +52,32 @@ post '/movement' do
 end
 
 post '/throwfivegold' do
-  #@goldcount = @goldcount- 5
+  @@goldcount = @@goldcount- 5
   #because of greed they face dragon again
   @greed = "yes"
+  @doover= "yes" 
   erb :dragonattack
 end
 
 post '/throwtengold' do
   @greed = "no"
-  #@goldcount -= 10
+  @@goldcount = @@goldcount- 10
+  #@@goldcount -= 10
   @status = "continue"
   erb :cave
 end
 
-post '/throwfifteengold' do
-  #@goldcount -= 15
-  @greed = "yes"
+post '/throweithergold' do
+  if params['command'] == 5
+    @@goldcount = @@goldcount - 5
+    @greed = "yes"
+  else
+    @@goldcount = @@goldcount - 10
+    @greed = "no"
+  end
   erb :cave
 end
 
-post '/throwtwentygold' do
-  @greed = "no"
-  #@goldcount -= 20
-  erb :cave
-end
 
 post '/stokefire' do
   @status = "continue"
@@ -84,28 +87,15 @@ end
 #hack because I dont know how to pass two values
 post '/updateinventory' do
   if params['command'] != 'no'
-    #@inventory.add("knife")
-  #@inventory.add(params['command'])
-  return "Inventory #{@inventory}"
+    if @@inventory.include?(params['command'])
+      @@inventory[params['command']] += 1
+      erb :tree
+      #return "Inventory #{@@inventory}"
+    else
+      @@inventory.store(params['command'], 1)
+      erb :tree
+    end
   else
     erb :tree
   end
-=begin  
-  if @inventory.include?(params['command'])
-    @inventory["knife"] += 1
-  else
-    @inventory.add(params['command'])
-  end
-  #return @inventory
-=end
 end
-=begin
-def updateinventory (hashvalue, amount)
-  if @inventory.include?(hashvalue)
-    @inventory[hashvalue] += amount
-  else
-    @inventory.add(hashvalue)
-  end
-  return @inventory
-end 
-=end

@@ -2,43 +2,21 @@
 
 <p style="color:white;" class="Descr">Defend Yourself</p>
 
-  <!--
-<% if @greed != "no" %>
-    <form action="/throwfifteengold" method="POST">
-        <button>Throw 5 Gold Coins!!! </button>
-    </form>
-    
-    <form action="/throwtwentygold" method="POST">
+  
+<% if @greed != "no" && @doover == "yes" %>
+    <form action="/throwtengold" method="POST">
         <button>Throw 10 Gold Coins!!! </button>
-       <!-- <button name="ten">Throw 10 Gold Coins!!! </button> 
     </form>
-
+<%end%>
+<% if @greed != "no" && @doover != "yes" %>
+    <form action="/throweithergold" method="POST">
+        <button>Throw 5 Gold Coins!!! </button>
+            <input type="hidden" name="command" value=5>
+        <button>Throw 10 Gold Coins!!! </button>
+            <input type="hidden" name="command" value=10>
+    </form>
 <% else %>
     <form action="/throwfivegold" method="POST">
         <button>Throw 5 Gold Coins!!! </button>
     </form>
-    
-    <form action="/throwtengold" method="POST">
-       <!-- <button name="ten">Throw 10 Gold Coins!!! </button> 
-    </form>
 <%end%>
--->
-<!--
-<form action="/movement" method="POST">
-    <label>Defend Yourself</label>
-    <input type ="text" name="movement">
-    <input type ="submit">
-  
-    <form action="/throwgold" method="POST">
-        <button>Throw 5 Gold Coins!!! </button>
-    </form>
-</form>-->
-    
-    <form action="/throwfivegold" method="POST">
-        <button>Throw 5 Gold Coins to distract the dragon!!! </button>
-    </form>
-    
-    <form action="/throwtengold" method="POST">
-        <button>Throw 10 Gold Coins to distract the dragon!!! </button>
-    </form>
-    
