@@ -7,13 +7,12 @@
     <form action="/throwtengold" method="POST">
         <button>Throw 10 Gold Coins!!! </button>
     </form>
-<%end%>
-<% if @greed != "no" && @doover != "yes" %>
-    <form action="/throweithergold" method="POST">
+<% elsif @greed != "no" && @doover != "yes" %>
+    <form action="/throwfivegold" method="POST" style="display: inline">
         <button>Throw 5 Gold Coins!!! </button>
-            <input type="hidden" name="command" value=5>
+    </form>
+    <form action="/throwtengold" method="POST" style="display: inline">
         <button>Throw 10 Gold Coins!!! </button>
-            <input type="hidden" name="command" value=10>
     </form>
 <% else %>
     <form action="/throwfivegold" method="POST">

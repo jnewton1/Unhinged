@@ -62,13 +62,12 @@ end
 post '/throwtengold' do
   @greed = "no"
   @@goldcount = @@goldcount- 10
-  #@@goldcount -= 10
   @status = "continue"
   erb :cave
 end
 
 post '/throweithergold' do
-  if params['command'] == 5
+  if params['command'] == "five"
     @@goldcount = @@goldcount - 5
     @greed = "yes"
   else
