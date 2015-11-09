@@ -5,11 +5,10 @@ require './lib/game.rb'
 set :public_folder, "public"
 
 get '/' do
+  @@health = 100
   @@goldcount = 0
   @@inventory = { }
-  #@@inventory = {"Jane Doe" => 10}
   @story="You are in a dark forest. It's cold and raining."
-  #@followup = "To the north there is a cave (1) and to the east there is a tree (2), choose your destiny"
   @option1 = "To the north there is a cave"
   @option2 = "To the east there is a tree"
   #level= Game::castle
@@ -20,6 +19,7 @@ post '/console' do
   if params['command'] == '1'
     erb :cave
   else 
+    @first = "yes"
     erb :tree
   end
 end
@@ -53,6 +53,7 @@ end
 
 post '/throwfivegold' do
   @@goldcount = @@goldcount- 5
+  @@health = @@health- 15
   #because of greed they face dragon again
   @greed = "yes"
   @doover= "yes" 
@@ -62,6 +63,7 @@ end
 post '/throwtengold' do
   @greed = "no"
   @@goldcount = @@goldcount- 10
+  @@health = @@health- 5
   @status = "continue"
   erb :cave
 end
@@ -69,9 +71,11 @@ end
 post '/throweithergold' do
   if params['command'] == "five"
     @@goldcount = @@goldcount - 5
+    @@health = @@health- 15
     @greed = "yes"
   else
     @@goldcount = @@goldcount - 10
+    @@health = @@health- 5
     @greed = "no"
   end
   erb :cave
@@ -87,12 +91,22 @@ end
 post '/updateinventory' do
   if params['command'] != 'no'
     if @@inventory.include?(params['command'])
-      @@inventory[params['command']] += 1
-      erb :tree
-      #return "Inventory #{@@inventory}"
+      if params['command'] == "wood"
+        @@inventory[params['command']] += 5
+        erb :cave
+      else
+        @@inventory[params['command']] += 1
+        erb :tree
+        #return "Inventory #{@@inventory}"
+      end
     else
-      @@inventory.store(params['command'], 1)
-      erb :tree
+      if params['command'] == "wood"
+        @@inventory.store(params['command'], 5)
+        erb :tree
+      else
+        @@inventory.store(params['command'], 1)
+        erb :tree
+      end
     end
   else
     erb :tree

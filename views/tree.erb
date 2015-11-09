@@ -1,6 +1,8 @@
 <!-- enter form -->
 <p style="color:white;" > You are under a leaf. Stay until the rain ceases</p>
 <p style="color:white;"><%=@story%></p>
+
+<% if @first == "yes" %>
 <script>
   $(document).ready(function(){
     $("button").click(function(){
@@ -12,7 +14,7 @@
 
   });
   });
-  </script>
+</script>
   <button>Continue Story</button>
  
   <div id="div1" style="width:590px;height:10px;display:none;">
@@ -41,9 +43,36 @@
         <p style="color:white; display: inline">No</p><br>
       <input type="submit">
     </form> 
-    <!--
-    <form action="/updateinventory" method="POST">
-      <input type="hidden" name="command" value="knife">
-      render "
-    </form>-->
   </div><br>
+<%else%>
+<script>
+  $(document).ready(function(){
+    $("button").click(function(){
+    $("#div1").delay(1800).fadeIn();
+    $("#div2").delay(3800).fadeIn();
+    $("#div3").delay(4800).fadeIn();
+    $("#div4").delay(5400).fadeIn();
+    $("#div5").delay(6800).fadeIn();
+
+  });
+  });
+</script>
+<button>Continue Story</button>
+ 
+  <div id="div1" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> Scrounge around for some wood</p>
+  </div><br>
+  
+  <div id="div2" style="width:590px;height:10px;display:none;">
+    <p style="color:white;" class="Descr"> Add wood to inventory?</p>
+    <form action="/updateinventory" method="POST">
+      <input type="radio" name="command" value="wood" style="display: inline">
+        <p style="color:white; display: inline">Yes</p><br>
+      <input type="radio" name="command" value="no" style="display: inline">
+        <p style="color:white; display: inline">No</p><br>
+      <input type="submit">
+    </form> 
+  </div><br>
+  
+<%end%>
+
