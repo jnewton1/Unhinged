@@ -32,7 +32,7 @@ end
 post '/processgold' do
   if params['goldcount'].to_i > 50
     @@goldcount = params['goldcount'].to_i
-    erb :dragonattack
+    erb :cardgame
   else
     #store inventory
     @@goldcount = params['goldcount'].to_i
