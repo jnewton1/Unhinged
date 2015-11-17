@@ -13,7 +13,11 @@
 -->
 <form action="/processgold" method="POST">
     <b><label style="color:white;">Gold Count:</label></b>
-    <input type ="range" name="goldcount" min="0" max"100">
+    <div id="slider">
+        <input class="bar" type ="range" name="goldcount" value= "50" id="rangeinput" min="0" max"100" onchange="rangevalue.value=value"/>
+            <span class="highlight"></span>
+            <output id="rangevalue">50</output>
+        </div>
     <input type ="submit">
 </form>
 
