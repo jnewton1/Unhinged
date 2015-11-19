@@ -1,0 +1,18 @@
+<p style="color:white;" class="Descr">A theif has appeared and wants to take your wood...</p>
+
+<% if @wrath != "no" && @doover == "yes" %>
+    <form action="/throwtengold" method="POST">
+        <button>Throw 10 Gold Coins!!! </button>
+    </form>
+<% elsif @wrath != "no" && @doover != "yes" %>
+    <form action="/throwfivegold" method="POST" style="display: inline">
+        <button>Throw 5 Gold Coins!!! </button>
+    </form>
+    <form action="/throwtengold" method="POST" style="display: inline">
+        <button>Throw 10 Gold Coins!!! </button>
+    </form>
+<% else %>
+    <form action="/throwfivegold" method="POST">
+        <button>Throw 5 Gold Coins!!! </button>
+    </form>
+<%end%>
