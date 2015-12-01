@@ -258,6 +258,7 @@ input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue
 /* Tool Tip */
 #rangevalue {
 	color: white;
+	
 	font-size: 10px;
 	text-align: center;
 	font-family:  Arial, sans-serif;
