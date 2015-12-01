@@ -87,6 +87,17 @@ post '/stokefire' do
   @firelevel = "high"
 end
 
+post '/pathway' do
+  if params['command'] != 'short'
+    @pathway = "long"
+    erb :pathway
+  else
+    @pathway = "short"
+    erb :pathway
+    #minigame
+  end
+end
+
 #hack because I dont know how to pass two values
 post '/updateinventory' do
   if params['command'] != 'no'
@@ -110,5 +121,20 @@ post '/updateinventory' do
     end
   else
     erb :tree
+  end
+end
+
+post '/updatefoodinventory' do
+  if params['command'] != 'no'
+    if @@inventory.include?(params['command'])
+      if params['command'] == "apple"
+        @@inventory[params['command']] += 2
+       # erb :cave
+        #return "Inventory #{@@inventory}"
+      end
+    
+    else
+      #minigame
+    end
   end
 end

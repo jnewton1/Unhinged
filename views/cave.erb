@@ -37,20 +37,27 @@
   </div><br>
   
   <div id="div2" style="width:590px;height:10px;display:none;">
-    <p style="color:white;" class="Descr"> Second Message</p>
+    <p style="color:white;" class="Descr"> Light begins to shine from the other entrance of the cave</p>
   </div><br>
   
   <div id="div3" style="width:590px;height:10px;display:none;">
-    <p style="color:white;" class="Descr"> Story continues</p>
+    <p style="color:white;" class="Descr"> Steps outside to see a village in the distance </p>
   </div><br>
   
   <div id="div4" style="width:590px;height:10px;display:none;">
-    <p style="color:white;" class="Descr"> Blah blah blah....</p>
+    <p style="color:white;" class="Descr"> "I don't want to go through the forest</p>
   </div><br>
   
   <div id="div5" style="width:590px;height:10px;display:none;">
-    <p style="color:white;" class="Descr"> Add more!!!</p>
+    <form action="/pathway" method="POST">
+      <input type="radio" name="command" value="short" style="display: inline">
+        <p style="color:white; display: inline">Take short cut</p><br>
+      <input type="radio" name="command" value="long" style="display: inline">
+        <p style="color:white; display: inline">Take long way</p><br>
+      <input type="submit">
+    </form>
   </div><br>
+  
 
 <%end%>
 
