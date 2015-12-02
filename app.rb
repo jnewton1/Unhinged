@@ -88,13 +88,18 @@ post '/stokefire' do
 end
 
 post '/pathway' do
-  if params['command'] != 'short'
+  if params['command'] == "long"
     @pathway = "long"
+    @status = "continue"
     erb :pathway
-  else
+  elsif params['command'] == "short"
     @pathway = "short"
+    @status = ""
     erb :pathway
-    #minigame
+  elsif params['command'] == "cut"
+    erb :village
+  else
+    erb :cardgame
   end
 end
 
@@ -125,16 +130,26 @@ post '/updateinventory' do
 end
 
 post '/updatefoodinventory' do
-  if params['command'] != 'no'
+  if params['command'] == 'apple'
     if @@inventory.include?(params['command'])
       if params['command'] == "apple"
-        @@inventory[params['command']] += 2
-       # erb :cave
-        #return "Inventory #{@@inventory}"
+        @@inventory[params['command']] += 3
+        @pathway = "long"
+        @status = "continue"
+        erb :pathway
       end
-    
     else
-      #minigame
+        @@inventory.store(params['command'], 3)
+        @pathway = "long"
+        @status = "continue"
+        erb :pathway
     end
+  else
+    erb :cardgame
+    
   end
+end
+
+post '/gotocards' do
+  erb :cardgame
 end

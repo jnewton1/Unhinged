@@ -1,7 +1,7 @@
 <!-- enter form -->
 <p style="color:white;"> You have chosen your destiny!</p>
-<%= @pathway %>
-<% if @pathway != "short"%>
+
+<% if @pathway == "long" && status !="continue"%>
         <!-- do something-->
         <script>
           $(document).ready(function(){
@@ -32,7 +32,38 @@
         <p style="color:white; display: inline">No</p><br>
       <input type="submit">
     </form> 
+<% elsif @pathway == "long" && status =="continue"%>
+        <!-- do something-->
+        <script>
+          $(document).ready(function()
+          {
+            $("button").click(function()
+            {
+              $("#div1").delay(1800).fadeIn();
+              $("#div2").delay(3800).fadeIn();
+            });
+          });
+        </script>
+        
+        <button>Continue Story</button>
+     
+      <div id="div1" style="width:590px;height:10px;display:none;">
+        <p style="color:white;" class="Descr"> Village access blocked by tree, use knife to cut path</p>
+      </div><br>
+      
+      <div id="div2" style="width:590px;height:10px;display:none;">
+        <p style="color:white;" class="Descr"> Cut Path?</p>
+         
+    <form action="/pathway" method="POST">
+      <input type="radio" name="command" value="cut" style="display: inline">
+        <p style="color:white; display: inline">Cut path</p><br>
+      <input type="radio" name="command" value="nocut" style="display: inline">
+        <p style="color:white; display: inline">No</p><br>
+      <input type="submit">
+    </form> 
 <% else %>
     <!-- go to minigame-->   
+    <form action="/gotocards" method="POST">
+    </form>
     
 <%end%>
