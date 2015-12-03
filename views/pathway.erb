@@ -1,7 +1,7 @@
 <!-- enter form -->
 <p style="color:white;"> You have chosen your destiny!</p>
 
-<% if @pathway == "long" && status !="continue"%>
+<% if @pathway == "long" && @status !="continue"%>
         <!-- do something-->
         <script>
           $(document).ready(function(){
@@ -32,7 +32,7 @@
         <p style="color:white; display: inline">No</p><br>
       <input type="submit">
     </form> 
-<% elsif @pathway == "long" && status =="continue"%>
+<% elsif @pathway == "long" && @status =="continue"%>
         <!-- do something-->
         <script>
           $(document).ready(function()
